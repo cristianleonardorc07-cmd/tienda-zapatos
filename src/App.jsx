@@ -14,7 +14,8 @@ import {
   Plus,
   Minus,
 } from "lucide-react";
-import products from "./data/products.json";
+import products from "./data/catalog";
+import { assetUrl } from "./utils/assets";
 import ProductCard from "./components/ProductCard";
 import Cart from "./components/Cart";
 import Modal from "./components/Modal";
@@ -190,7 +191,7 @@ export default function App() {
         <div className="header-inner">
           <a
             className="logo"
-            href="/"
+            href={import.meta.env.BASE_URL}
             onClick={(e) => {
               e.preventDefault();
               openProduct(null);
@@ -322,7 +323,7 @@ export default function App() {
               </div>
               <div className="hero-visual">
                 <img
-                  src="/images/shoe-hero.png"
+                  src={assetUrl("/images/shoe-hero.png")}
                   alt="Calzado deportivo de ejemplo, fotografía de inspiración"
                   fetchPriority="high"
                 />
@@ -388,7 +389,7 @@ export default function App() {
                     onClick={() => browse(name)}
                   >
                     <img
-                      src={`/images/${photo}`}
+                      src={assetUrl(`/images/${photo}`)}
                       alt={`Inspiración de calzado para ${name.toLowerCase()}`}
                       loading="lazy"
                     />
@@ -612,7 +613,7 @@ export default function App() {
       <footer className="site-footer">
         <div className="container footer-top">
           <div>
-            <a className="logo footer-logo" href="/">
+            <a className="logo footer-logo" href={import.meta.env.BASE_URL}>
               NOVA<span>KICKS®</span>
             </a>
             <p>

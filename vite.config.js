@@ -1,2 +1,5 @@
 import { defineConfig } from "vite";
-export default defineConfig({ esbuild: { jsx: "automatic" } });
+export default defineConfig({
+  base: process.env.VITE_BASE_PATH || "/",
+  esbuild: { jsx: "automatic" },
+});
