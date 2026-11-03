@@ -42,11 +42,11 @@ Las fichas usan `?producto=nk-001`, compatible con navegación atrás/adelante y
 La tienda está preparada para https://cristianleonardorc07-cmd.github.io/tienda-zapatos/.
 
 1. En GitHub abre este repositorio → **Settings → Pages**.
-2. En **Build and deployment**, elige **Deploy from a branch**.
-3. Selecciona la rama **gh-pages**, carpeta **/ (root)**, y pulsa **Save**.
+2. En **Build and deployment → Source**, elige **GitHub Actions**.
+3. Abre **Actions → Publish NOVA KICKS → Run workflow** y confirma con el botón verde.
 4. GitHub mostrará el enlace cuando termine la publicación; puede tardar unos minutos.
 
-La rama `gh-pages` contiene solo el sitio compilado. El código se mantiene en `main`. El workflow `.github/workflows/github-pages.yml` actualiza el sitio automáticamente al subir cambios a `main`. No edites los archivos de `gh-pages` directamente. Si GitHub Actions no tiene permiso de escritura, habilita **Read and write permissions** en Settings → Actions → General → Workflow permissions y vuelve a ejecutar el workflow.
+El código se mantiene en `main`. El workflow `.github/workflows/github-pages.yml` compila y publica mediante las acciones oficiales de GitHub Pages y actualiza el sitio automáticamente al subir cambios a `main`. La rama `gh-pages` contiene una copia estática inicial, pero no se utiliza con la fuente GitHub Actions. No necesitas configurar permisos de escritura sobre el código.
 
 Para habilitar pedidos configura `VITE_WHATSAPP_NUMBER` con el número real colombiano en **Settings → Secrets and variables → Actions → Variables → New repository variable**. Opcionalmente configura `VITE_INSTAGRAM_URL`. Después abre **Actions → Publish NOVA KICKS → Run workflow** para recompilar. Son valores públicos, no contraseñas. No pongas números de ejemplo para recibir pedidos.
 
